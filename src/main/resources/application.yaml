@@ -9,3 +9,19 @@ spring:
           uri: https://github.com/azzmosphere/pluralsight-spring-cloudconfig-wa-tolls
           #username: uname
           #password: pass
+
+          # wild cards work in config
+          # This matches any config sub folder that has station in it.
+          search-paths:
+            - 'station*'
+
+          # Different repo's can be used for different purposes
+          # in this case we are using them for performance
+          # testing
+          repos:
+            perf:
+              pattern:
+                - "*/perf"
+              uri: https://github.com/azzmosphere/pluualsight-spring-cloudconfig-wa-tolls-perf
+              search-paths:
+                - 'station*'
